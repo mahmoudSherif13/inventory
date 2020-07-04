@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1 create a new tag
+    form(action="" method="POST")
+        label(for="name") name
+        input(type="text" name="name" id="name" value=(tag === undefined?"":tag.name))
+        label(for="description") description
+        input(type="text" name="description" id="description" value=(tag === undefined ? "" : tag.description))
+        button(type="submit") submit

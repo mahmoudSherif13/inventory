@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    form(action="" method="POST")
+        label(for="name") Name
+        input(type="text" name="name" required="true" value=(item === undefined ? "" : item.name))
+        label(for="description") description
+        input(type="text" name="description" value=(item === undefined ? "" : item.description))
+        label(for="price") price
+        input(type="number" name="price" required="true" value=(item === undefined ? "" : item.price))
+        label(for="inStock") in stock
+        input(type="number" name="inStock" required="true" value=(item === undefined ? "" : item.inStock))
+        select(type="select" placeholder="select a tag" name="tag" required="true")
+            for tag in tags
+                if item
+                    option(
+                        value = tag._id
+                        selected=(
+                            tag._id.toString() === item.tag._id || tag._id === item.tag
+                        )? "selected": false
+                    ) !{tag.name}
+                else
+                    option(value=tag._id) !{tag.name}
+        button.btn.btn-primary(type='submit') Submit

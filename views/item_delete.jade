@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h1 delete game !{item.name}
+    p  are you sure you want to delete this game
+    form(action="" method="POST")
+        button(type="submit") delete

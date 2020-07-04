@@ -1,0 +1,8 @@
+extend layout 
+
+block content
+    h1= item.name
+    p 
+        a(href=item.tag.url) tag !{item.tag.name}
+    p price !{item.price}
+    p in stock !{item.inStock}

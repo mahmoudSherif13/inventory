@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1 are you sure do you want to delete tag !{tag.name}
+    form(action="" method="POST")
+        label(for="password") admin pass
+        input(type="password" name="password" id="password")
+        button(type="submit") submit
